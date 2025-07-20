@@ -649,5 +649,16 @@ window.addEventListener('scroll', function() {
 });
 </script>
 
+<script>
+document.addEventListener('click', function() {
+  const sound = document.getElementById('ambient-sound');
+  if (sound.paused) sound.play();
+}, { once: true });
+</script>
+
+<audio id="ambient-sound" autoplay loop>
+  <source src="soft-chime.mp3" type="audio/mpeg">
+</audio>
+
 </body>
 </html>
