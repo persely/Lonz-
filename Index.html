@@ -68,6 +68,42 @@
       animation: none;
     }
   </style>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    z-index: 100;
+    animation: bounce 2s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
+
 </head>
 <body class="min-h-screen flex flex-col">
 
