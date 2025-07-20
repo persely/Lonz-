@@ -8,6 +8,40 @@
   <meta name="keywords" content="luxury skincare, radiant skin, premium beauty, Lonz Flawls Aura" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
   <style>
+
+<style>
+.parallax-reveal {
+  position: relative;
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+  overflow: hidden;
+  padding: 100px 20px;
+  text-align: center;
+  z-index: 2;
+}
+.parallax-reveal h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #c2185b;
+}
+.parallax-reveal p {
+  font-size: 1.3rem;
+  color: #333;
+  max-width: 600px;
+  margin: auto;
+}
+.parallax-reveal img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 40px;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 1.5s ease-out;
+}
+.parallax-reveal.show img {
+  transform: translateY(0);
+  opacity: 1;
+}
+</style>
 <style>
 .glow-cta {
   display: inline-block;
