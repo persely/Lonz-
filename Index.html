@@ -130,6 +130,24 @@
   </style>
 
 <style>
+.floating-shimmer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.05), transparent 70%);
+  animation: shimmerFlow 20s linear infinite;
+  z-index: 1;
+}
+@keyframes shimmerFlow {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-100px) rotate(360deg); }
+}
+</style>
+
+<style>
   .whatsapp-float {
     position: fixed;
     bottom: 20px;
