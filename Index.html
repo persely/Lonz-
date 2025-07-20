@@ -551,5 +551,13 @@
 <!-- GLOWING CTA BUTTON & SCROLL TO TOP -->
 <a href="#top" class="glow-cta">Shop the Aura</a>
 
+<script>
+// Smooth scroll to top when CTA clicked
+document.querySelector('.glow-cta').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
 </body>
 </html>
