@@ -1,122 +1,600 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lonzflawlsaura">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore our signature skincare products – from lotions to soaps and oil combos. Scientifically formulated. Naturally effective." />
-  <title>Products | Lonz Flawls Aura</title>
-  <link rel="stylesheet" href="styles/global.css" />
+  <meta name="description" content="Shop premium skincare products by Lonz Flawls Aura. Science meets nature in every drop. Secure checkout. Global shipping.">
+  <meta name="author" content="Lonz Flawls Aura" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Premium Skincare Products | Lonz Flawls Aura</title>
+  <meta name="title" content="Premium Skincare Products | Lonz Flawls Aura">
+  <meta name="keywords" content="luxury skincare, glow serum, kojic soap, tissue oil, South African beauty products">
+  
+  <!-- Favicons & Icons -->
+  <link rel="icon" href="icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/products.css" />
-  <link rel="icon" href="images/logo/favicon.png" type="image/png" />
-  <script defer src="scripts/firewall.js"></script>
-  <script defer src="scripts/products.js"></script>
-  <script defer src="scripts/app.js"></script>
+  <link rel="stylesheet" href="styles/firewall.css" />
+  <link rel="stylesheet" href="styles/icons.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
+  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous" defer></script>
+
+  <!-- Speed Optimizations -->
+  <link rel="preload" href="images/products/extra-glow-lotion.jpg" as="image">
+  <link rel="preload" href="scripts/products.js" as="script">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Premium Skincare Products | Lonz Flawls Aura",
+      "description": "Shop luxury skincare products combining nature and science for radiant skin",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lonz Flawls Aura",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lonzflawlsaura.com/images/logo.svg"
+        }
+      }
+    }
+  </script>
 </head>
 
-<body>
-  <!-- HEADER / TOP NAV -->
-  <header class="header">
-    <div class="logo"><img src="images/logo/logo-white.png" alt="Lonz Flawls Aura Logo" /></div>
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="index.html"><img src="icons/home.svg" alt="Home" /></a></li>
-        <li><a href="about.html"><img src="icons/user.svg" alt="About" /></a></li>
-        <li><a href="product.html" class="active"><img src="icons/bag.svg" alt="Products" /></a></li>
-        <li><a href="contact.html"><img src="icons/message.svg" alt="Contact" /></a></li>
-      </ul>
-    </nav>
+<body class="products-page">
+  <!-- 🔒 Security Lock (Hidden from visual users) -->
+  <div id="secure-lock" aria-hidden="true"></div>
+
+  <!-- ==================== -->
+  <!-- 🎀 MAIN NAVIGATION -->
+  <!-- ==================== -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Lonz Flawls Aura - Premium Skincare" class="logo" width="180" height="60" loading="eager">
+      </a>
+      
+      <nav class="bottom-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" aria-label="Home">
+              <span class="icon-home" aria-hidden="true"></span>
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link" aria-label="About Us">
+              <span class="icon-info" aria-hidden="true"></span>
+              <span class="nav-text">About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="product.html" class="nav-link active" aria-current="page" aria-label="Products">
+              <span class="icon-shopping-bag" aria-hidden="true"></span>
+              <span class="nav-text">Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link" aria-label="Contact">
+              <span class="icon-envelope" aria-hidden="true"></span>
+              <span class="nav-text">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- FEATURED PRODUCTS -->
-    <section class="section featured-products">
+  <main class="main-content" role="main">
+    <!-- ==================== -->
+    <!-- 🌟 PRODUCT HERO -->
+    <!-- ==================== -->
+    <section class="hero-banner product-hero fade-in">
       <div class="container">
-        <h2 class="section-title">Our Signature Collection</h2>
-        <p class="section-subtitle">Science meets nature in every formula.</p>
-        <div class="product-grid">
-          <!-- Product 1 -->
-          <div class="product-card">
-            <img src="images/products/extra-glow-lotion.jpg" alt="Extra Glow Lotion" class="product-img" />
-            <h3 class="product-name">Extra Glow Lotion</h3>
-            <p class="product-desc">Hydrates and illuminates dull skin. A perfect daily formula for long-lasting radiance.</p>
-            <span class="product-price">R149.99</span>
-            <button class="btn view-details" data-product="lotion">View Benefits</button>
-          </div>
-
-          <!-- Product 2 -->
-          <div class="product-card">
-            <img src="images/products/kojic-soap.jpg" alt="Kojic Soap" class="product-img" />
-            <h3 class="product-name">Kojic Soap</h3>
-            <p class="product-desc">Fades dark spots and brightens uneven tone. Balanced with organic ingredients.</p>
-            <span class="product-price">R59.99</span>
-            <button class="btn view-details" data-product="soap">View Benefits</button>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="product-card">
-            <img src="images/products/extra-glow-oil.jpg" alt="Extra Glow Oil" class="product-img" />
-            <h3 class="product-name">Extra Glow Tissue Oil</h3>
-            <p class="product-desc">Repairs and strengthens the skin barrier. Infused with African botanical oils.</p>
-            <span class="product-price">R129.99</span>
-            <button class="btn view-details" data-product="oil">View Benefits</button>
-          </div>
+        <div class="hero-content">
+          <h1 class="hero-title">Find Your Perfect Glow</h1>
+          <p class="hero-subtitle">Curated skincare essentials powered by nature, perfected by science.</p>
+          <a href="#featured-products" class="btn btn-primary scroll-link" aria-label="View our signature products">
+            Discover Now
+            <span class="icon-arrow-right" aria-hidden="true"></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- COMBO OFFERS -->
-    <section class="section combo-offers">
+    <!-- ==================== -->
+    <!-- 💎 FEATURED PRODUCTS -->
+    <!-- ==================== -->
+    <section id="featured-products" class="section products-grid-section" aria-labelledby="featured-products-heading">
       <div class="container">
-        <h2 class="section-title">Combo Deals</h2>
+        <header class="section-header">
+          <h2 id="featured-products-heading" class="section-title">Our Signature Collection</h2>
+          <p class="section-subtitle">Science meets nature in every formula.</p>
+        </header>
+        
+        <div class="products-grid">
+          <!-- Product Card 1 -->
+          <article class="product-card scale-hover" itemscope itemtype="https://schema.org/Product">
+            <figure class="product-figure">
+              <img src="images/products/extra-glow-lotion.jpg" alt="Extra Glow Lotion" class="product-img" loading="lazy" width="400" height="400" itemprop="image">
+              <figcaption class="visually-hidden">Extra Glow Lotion product image</figcaption>
+            </figure>
+            <div class="product-details">
+              <h3 class="product-name" itemprop="name">Extra Glow Lotion</h3>
+              <p class="product-desc" itemprop="description">Hydrates and illuminates dull skin. A perfect daily formula for long-lasting radiance.</p>
+              <div class="product-meta">
+                <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="ZAR">
+                  <span itemprop="price">R149.99</span>
+                </span>
+                <button class="btn view-details" data-product="lotion" aria-expanded="false" aria-controls="product-lotion-details">
+                  View Benefits
+                  <span class="icon-plus" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div id="product-lotion-details" class="product-benefits" hidden>
+              <!-- Benefits content here -->
+            </div>
+          </article>
+
+          <!-- Product Card 2 -->
+          <article class="product-card scale-hover" itemscope itemtype="https://schema.org/Product">
+            <figure class="product-figure">
+              <img src="images/products/kojic-soap.jpg" alt="Kojic Soap" class="product-img" loading="lazy" width="400" height="400" itemprop="image">
+              <figcaption class="visually-hidden">Kojic Soap product image</figcaption>
+            </figure>
+            <div class="product-details">
+              <h3 class="product-name" itemprop="name">Kojic Soap</h3>
+              <p class="product-desc" itemprop="description">Fades dark spots and brightens uneven tone. Pure, rich and balanced with organic ingredients.</p>
+              <div class="product-meta">
+                <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="ZAR">
+                  <span itemprop="price">R59.99</span>
+                </span>
+                <button class="btn view-details" data-product="soap" aria-expanded="false" aria-controls="product-soap-details">
+                  View Benefits
+                  <span class="icon-plus" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div id="product-soap-details" class="product-benefits" hidden>
+              <!-- Benefits content here -->
+            </div>
+          </article>
+
+          <!-- Product Card 3 -->
+          <article class="product-card scale-hover" itemscope itemtype="https://schema.org/Product">
+            <figure class="product-figure">
+              <img src="images/products/extra-glow-oil.jpg" alt="Extra Glow Tissue Oil" class="product-img" loading="lazy" width="400" height="400" itemprop="image">
+              <figcaption class="visually-hidden">Extra Glow Tissue Oil product image</figcaption>
+            </figure>
+            <div class="product-details">
+              <h3 class="product-name" itemprop="name">Extra Glow Tissue Oil</h3>
+              <p class="product-desc" itemprop="description">Repairs and strengthens the skin barrier. Deep nourishment from organic African botanicals.</p>
+              <div class="product-meta">
+                <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="ZAR">
+                  <span itemprop="price">R129.99</span>
+                </span>
+                <button class="btn view-details" data-product="oil" aria-expanded="false" aria-controls="product-oil-details">
+                  View Benefits
+                  <span class="icon-plus" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div id="product-oil-details" class="product-benefits" hidden>
+              <!-- Benefits content here -->
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== -->
+    <!-- 🔥 COMBO DEALS -->
+    <!-- ==================== -->
+    <section class="section combo-offers bg-light" aria-labelledby="combo-deals-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="combo-deals-heading" class="section-title">Curated Skincare Sets</h2>
+          <p class="section-subtitle">Save more while achieving your glow goals</p>
+        </header>
+        
         <div class="combo-grid">
-          <div class="combo-card">
-            <h3>Extra Glow Combo</h3>
-            <p>Includes: Tissue Oil, Lotion, Kojic Soap</p>
-            <span class="combo-price">R299.99</span>
-            <button class="btn combo-btn">Add to Cart</button>
-          </div>
-          <div class="combo-card">
-            <h3>Ultimate Repair Kit</h3>
-            <p>Includes: Glow Serum, Night Mask, Kojic Soap</p>
-            <span class="combo-price">R349.99</span>
-            <button class="btn combo-btn">Add to Cart</button>
-          </div>
+          <!-- Combo 1 -->
+          <article class="combo-card" itemscope itemtype="https://schema.org/Product">
+            <div class="combo-badge">Most Popular</div>
+            <figure class="combo-figure">
+              <img src="images/combo1.jpg" alt="Extra Glow Combo" class="combo-img" loading="lazy" width="600" height="400" itemprop="image">
+            </figure>
+            <div class="combo-details">
+              <h3 class="combo-name" itemprop="name">Extra Glow Combo</h3>
+              <ul class="combo-includes">
+                <li itemprop="description">Extra Glow Tissue Oil</li>
+                <li itemprop="description">Extra Glow Lotion</li>
+                <li itemprop="description">Kojic Soap</li>
+              </ul>
+              <div class="combo-pricing">
+                <span class="combo-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="ZAR">
+                  <span itemprop="price">R299.99</span>
+                </span>
+                <span class="combo-savings">Save 18%</span>
+              </div>
+              <button class="btn combo-btn" aria-label="Add Extra Glow Combo to cart">
+                Add to Cart
+                <span class="icon-shopping-cart" aria-hidden="true"></span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Combo 2 -->
+          <article class="combo-card" itemscope itemtype="https://schema.org/Product">
+            <div class="combo-badge">New Arrival</div>
+            <figure class="combo-figure">
+              <img src="images/combo2.jpg" alt="Ultimate Repair Kit" class="combo-img" loading="lazy" width="600" height="400" itemprop="image">
+            </figure>
+            <div class="combo-details">
+              <h3 class="combo-name" itemprop="name">Ultimate Repair Kit</h3>
+              <ul class="combo-includes">
+                <li itemprop="description">Glow Serum</li>
+                <li itemprop="description">Night Repair Mask</li>
+                <li itemprop="description">Kojic Soap</li>
+              </ul>
+              <div class="combo-pricing">
+                <span class="combo-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="ZAR">
+                  <span itemprop="price">R349.99</span>
+                </span>
+                <span class="combo-savings">Save 22%</span>
+              </div>
+              <button class="btn combo-btn" aria-label="Add Ultimate Repair Kit to cart">
+                Add to Cart
+                <span class="icon-shopping-cart" aria-hidden="true"></span>
+              </button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- FILTER BY GOALS -->
-    <section class="section filter-section">
+    <!-- ==================== -->
+    <!-- 🌿 INGREDIENT SPOTLIGHT -->
+    <!-- ==================== -->
+    <section id="ingredients" class="section ingredients-section" aria-labelledby="ingredients-heading">
       <div class="container">
-        <h2 class="section-title">Shop by Skin Goals</h2>
-        <div class="filter-buttons">
-          <button class="btn filter-btn" data-goal="glow">Glow</button>
-          <button class="btn filter-btn" data-goal="acne">Acne</button>
-          <button class="btn filter-btn" data-goal="hydration">Hydration</button>
-          <button class="btn filter-btn" data-goal="antiaging">Anti-Aging</button>
+        <header class="section-header">
+          <h2 id="ingredients-heading" class="section-title">Ingredient Spotlight</h2>
+          <p class="section-subtitle">Discover the natural power behind every formula</p>
+        </header>
+        
+        <div class="ingredients-grid">
+          <!-- Ingredient 1 -->
+          <article class="ingredient-card fade-in-up">
+            <figure class="ingredient-figure">
+              <img src="images/ingredients/kojic-acid.jpg" alt="Kojic Acid" class="ingredient-img" loading="lazy" width="300" height="300">
+            </figure>
+            <div class="ingredient-details">
+              <h3 class="ingredient-name">Kojic Acid</h3>
+              <p class="ingredient-desc">A natural brightening agent that reduces pigmentation and evens skin tone.</p>
+            </div>
+          </article>
+
+          <!-- Ingredient 2 -->
+          <article class="ingredient-card fade-in-up">
+            <figure class="ingredient-figure">
+              <img src="images/ingredients/shea-butter.jpg" alt="Shea Butter" class="ingredient-img" loading="lazy" width="300" height="300">
+            </figure>
+            <div class="ingredient-details">
+              <h3 class="ingredient-name">Shea Butter</h3>
+              <p class="ingredient-desc">Deeply moisturizes and soothes dry skin with rich vitamins.</p>
+            </div>
+          </article>
+
+          <!-- Ingredient 3 -->
+          <article class="ingredient-card fade-in-up">
+            <figure class="ingredient-figure">
+              <img src="images/ingredients/baobab-oil.jpg" alt="Baobab Oil" class="ingredient-img" loading="lazy" width="300" height="300">
+            </figure>
+            <div class="ingredient-details">
+              <h3 class="ingredient-name">Baobab Oil</h3>
+              <p class="ingredient-desc">Packed with antioxidants to restore skin elasticity and glow.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CHECKOUT CTA -->
-    <section class="section checkout-teaser">
+    <!-- ==================== -->
+    <!-- 💬 CUSTOMER REVIEWS -->
+    <!-- ==================== -->
+    <section id="reviews" class="section reviews-section bg-light" aria-labelledby="reviews-heading">
       <div class="container">
-        <h2 class="section-title">Secure, Simple, Seamless</h2>
-        <p class="teaser-text">End-to-end encryption. OTP verification. Trackable delivery. Peace of mind.</p>
-        <a href="checkout.html" class="btn btn-primary">Go to Checkout</a>
+        <header class="section-header">
+          <h2 id="reviews-heading" class="section-title">Glowing Testimonials</h2>
+          <p class="section-subtitle">What our community says</p>
+        </header>
+        
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-content" itemprop="reviewBody">
+              <p>"The Extra Glow Lotion has completely changed my skincare routine! My skin feels hydrated and radiant."</p>
+            </div>
+            <footer class="review-footer">
+              <span class="review-author" itemprop="author">Lindiwe T.</span>
+              <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                <meta itemprop="ratingValue" content="5">
+                <span class="stars">★★★★★</span>
+              </div>
+            </footer>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-content" itemprop="reviewBody">
+              <p>"I love the Kojic Soap—it gently brightens my skin without any irritation."</p>
+            </div>
+            <footer class="review-footer">
+              <span class="review-author" itemprop="author">Sipho M.</span>
+              <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                <meta itemprop="ratingValue" content="5">
+                <span class="stars">★★★★★</span>
+              </div>
+            </footer>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-content" itemprop="reviewBody">
+              <p>"The tissue oil is amazing for my dry patches. Highly recommend it!"</p>
+            </div>
+            <footer class="review-footer">
+              <span class="review-author" itemprop="author">Aisha K.</span>
+              <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                <meta itemprop="ratingValue" content="5">
+                <span class="stars">★★★★★</span>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== -->
+    <!-- ❓ FAQ SECTION -->
+    <!-- ==================== -->
+    <section id="faq" class="section faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know</p>
+        </header>
+        
+        <div class="faq-list">
+          <!-- FAQ Item 1 -->
+          <article class="faq-item">
+            <h3 class="faq-question">
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq1">
+                Are your products suitable for all skin types?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq1" class="faq-answer" hidden>
+              <p>Yes! Our products are carefully formulated to work well on most skin types, including sensitive skin. We recommend patch testing if you have particularly reactive skin.</p>
+            </div>
+          </article>
+
+          <!-- FAQ Item 2 -->
+          <article class="faq-item">
+            <h3 class="faq-question">
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq2">
+                How long does shipping take?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq2" class="faq-answer" hidden>
+              <p>Standard delivery usually takes 3-5 business days within South Africa. We offer express shipping options at checkout for faster delivery.</p>
+            </div>
+          </article>
+
+          <!-- FAQ Item 3 -->
+          <article class="faq-item">
+            <h3 class="faq-question">
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq3">
+                Can I return a product if I'm not satisfied?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq3" class="faq-answer" hidden>
+              <p>We offer a 14-day return policy on unopened products in their original packaging. For opened products, we provide store credit. Please contact our support team for assistance with returns.</p>
+            </div>
+          </article>
+
+          <!-- FAQ Item 4 -->
+          <article class="faq-item">
+            <h3 class="faq-question">
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq4">
+                Are your products cruelty-free?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq4" class="faq-answer" hidden>
+              <p>Absolutely! We never test on animals and all our ingredients are ethically sourced. We're proud to be a 100% cruelty-free brand.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== -->
+    <!-- 📧 NEWSLETTER -->
+    <!-- ==================== -->
+    <section class="section newsletter-section bg-accent" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="newsletter-content">
+          <header class="newsletter-header">
+            <h2 id="newsletter-heading" class="newsletter-title">Join Our Glow Community</h2>
+            <p class="newsletter-subtitle">Get exclusive offers and skincare tips</p>
+          </header>
+          
+          <form action="#" method="POST" class="newsletter-form">
+            <div class="form-group">
+              <label for="email" class="visually-hidden">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Your email address" required class="form-input">
+              <button type="submit" class="btn btn-light">
+                Subscribe
+                <span class="icon-arrow-right" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- BOTTOM ICON NAVIGATION -->
-  <footer class="bottom-nav">
-    <nav class="icon-nav">
-      <a href="index.html"><img src="icons/home.svg" alt="Home" /></a>
-      <a href="about.html"><img src="icons/user.svg" alt="About" /></a>
-      <a href="product.html" class="active"><img src="icons/bag.svg" alt="Shop" /></a>
-      <a href="contact.html"><img src="icons/message.svg" alt="Contact" /></a>
-    </nav>
+  <!-- ==================== -->
+  <!-- 🏁 FOOTER -->
+  <!-- ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/logo-light.svg" alt="Lonz Flawls Aura" width="160" height="50" loading="lazy">
+          </a>
+          <p class="footer-tagline">Your glow, our promise.</p>
+          
+          <div class="footer-social">
+            <h3 class="social-heading">Connect With Us</h3>
+            <ul class="social-list">
+              <li><a href="#" class="social-link" aria-label="Instagram"><span class="icon-instagram" aria-hidden="true"></span></a></li>
+              <li><a href="#" class="social-link" aria-label="Facebook"><span class="icon-facebook" aria-hidden="true"></span></a></li>
+              <li><a href="#" class="social-link" aria-label="Twitter"><span class="icon-twitter" aria-hidden="true"></span></a></li>
+              <li><a href="#" class="social-link" aria-label="WhatsApp"><span class="icon-whatsapp" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3 class="footer-nav-heading">Quick Links</h3>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Home</a></li>
+            <li><a href="about.html" class="footer-nav-link">About Us</a></li>
+            <li><a href="products.html" class="footer-nav-link">Products</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+            <li><a href="blog.html" class="footer-nav-link">Skincare Blog</a></li>
+          </ul>
+        </nav>
+
+        <!-- Customer Service -->
+        <nav class="footer-nav" aria-label="Customer service">
+          <h3 class="footer-nav-heading">Customer Service</h3>
+          <ul class="footer-nav-list">
+            <li><a href="shipping.html" class="footer-nav-link">Shipping Policy</a></li>
+            <li><a href="returns.html" class="footer-nav-link">Returns & Refunds</a></li>
+            <li><a href="privacy.html" class="footer-nav-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-nav-link">Terms of Service</a></li>
+            <li><a href="faq.html" class="footer-nav-link">FAQs</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact Info -->
+        <address class="footer-contact">
+          <h3 class="footer-nav-heading">Contact Us</h3>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span class="icon-phone" aria-hidden="true"></span>
+              <a href="tel:+27123456789">+27 12 345 6789</a>
+            </li>
+            <li class="contact-item">
+              <span class="icon-email" aria-hidden="true"></span>
+              <a href="mailto:hello@lonzflawlsaura.com">hello@lonzflawlsaura.com</a>
+            </li>
+            <li class="contact-item">
+              <span class="icon-location" aria-hidden="true"></span>
+              <span>Tzaneen, Limpopo, South Africa</span>
+            </li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="year">2025</span> Lonz Flawls Aura. All rights reserved.</p>
+        <div class="payment-methods">
+          <img src="images/payments/visa.svg" alt="Visa" width="40" height="25" loading="lazy">
+          <img src="images/payments/mastercard.svg" alt="Mastercard" width="40" height="25" loading="lazy">
+          <img src="images/payments/payfast.svg" alt="PayFast" width="40" height="25" loading="lazy">
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- ==================== -->
+  <!-- 📱 BOTTOM NAV (MOBILE) -->
+  <!-- ==================== -->
+  <nav class="bottom-nav-mobile" aria-label="Mobile navigation">
+    <ul class="bottom-nav-list">
+      <li>
+        <a href="index.html" class="bottom-nav-link" aria-label="Home">
+          <span class="icon-home" aria-hidden="true"></span>
+          <span class="nav-label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html" class="bottom-nav-link" aria-label="About">
+          <span class="icon-info" aria-hidden="true"></span>
+          <span class="nav-label">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="products.html" class="bottom-nav-link active" aria-current="page" aria-label="Products">
+          <span class="icon-shopping-bag" aria-hidden="true"></span>
+          <span class="nav-label">Products</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" class="bottom-nav-link" aria-label="Contact">
+          <span class="icon-envelope" aria-hidden="true"></span>
+          <span class="nav-label">Contact</span>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html" class="bottom-nav-link" aria-label="Cart">
+          <span class="icon-shopping-cart" aria-hidden="true"></span>
+          <span class="nav-label">Cart</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ==================== -->
+  <!-- 🚀 SCRIPTS -->
+  <!-- ==================== -->
+  <script src="scripts/firewall.js" defer></script>
+  <script src="scripts/products.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  
+  <!-- Current Year Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
