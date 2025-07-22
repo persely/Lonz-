@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our signature skincare products – from lotions to soaps and oil combos. Scientifically formulated. Naturally effective." />
+  <title>Products | Lonz Flawls Aura</title>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/products.css" />
+  <link rel="icon" href="images/logo/favicon.png" type="image/png" />
+  <script defer src="scripts/firewall.js"></script>
+  <script defer src="scripts/products.js"></script>
+  <script defer src="scripts/app.js"></script>
+</head>
+
+<body>
+  <!-- HEADER / TOP NAV -->
+  <header class="header">
+    <div class="logo"><img src="images/logo/logo-white.png" alt="Lonz Flawls Aura Logo" /></div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html"><img src="icons/home.svg" alt="Home" /></a></li>
+        <li><a href="about.html"><img src="icons/user.svg" alt="About" /></a></li>
+        <li><a href="product.html" class="active"><img src="icons/bag.svg" alt="Products" /></a></li>
+        <li><a href="contact.html"><img src="icons/message.svg" alt="Contact" /></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- FEATURED PRODUCTS -->
+    <section class="section featured-products">
+      <div class="container">
+        <h2 class="section-title">Our Signature Collection</h2>
+        <p class="section-subtitle">Science meets nature in every formula.</p>
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <img src="images/products/extra-glow-lotion.jpg" alt="Extra Glow Lotion" class="product-img" />
+            <h3 class="product-name">Extra Glow Lotion</h3>
+            <p class="product-desc">Hydrates and illuminates dull skin. A perfect daily formula for long-lasting radiance.</p>
+            <span class="product-price">R149.99</span>
+            <button class="btn view-details" data-product="lotion">View Benefits</button>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <img src="images/products/kojic-soap.jpg" alt="Kojic Soap" class="product-img" />
+            <h3 class="product-name">Kojic Soap</h3>
+            <p class="product-desc">Fades dark spots and brightens uneven tone. Balanced with organic ingredients.</p>
+            <span class="product-price">R59.99</span>
+            <button class="btn view-details" data-product="soap">View Benefits</button>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <img src="images/products/extra-glow-oil.jpg" alt="Extra Glow Oil" class="product-img" />
+            <h3 class="product-name">Extra Glow Tissue Oil</h3>
+            <p class="product-desc">Repairs and strengthens the skin barrier. Infused with African botanical oils.</p>
+            <span class="product-price">R129.99</span>
+            <button class="btn view-details" data-product="oil">View Benefits</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMBO OFFERS -->
+    <section class="section combo-offers">
+      <div class="container">
+        <h2 class="section-title">Combo Deals</h2>
+        <div class="combo-grid">
+          <div class="combo-card">
+            <h3>Extra Glow Combo</h3>
+            <p>Includes: Tissue Oil, Lotion, Kojic Soap</p>
+            <span class="combo-price">R299.99</span>
+            <button class="btn combo-btn">Add to Cart</button>
+          </div>
+          <div class="combo-card">
+            <h3>Ultimate Repair Kit</h3>
+            <p>Includes: Glow Serum, Night Mask, Kojic Soap</p>
+            <span class="combo-price">R349.99</span>
+            <button class="btn combo-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BY GOALS -->
+    <section class="section filter-section">
+      <div class="container">
+        <h2 class="section-title">Shop by Skin Goals</h2>
+        <div class="filter-buttons">
+          <button class="btn filter-btn" data-goal="glow">Glow</button>
+          <button class="btn filter-btn" data-goal="acne">Acne</button>
+          <button class="btn filter-btn" data-goal="hydration">Hydration</button>
+          <button class="btn filter-btn" data-goal="antiaging">Anti-Aging</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKOUT CTA -->
+    <section class="section checkout-teaser">
+      <div class="container">
+        <h2 class="section-title">Secure, Simple, Seamless</h2>
+        <p class="teaser-text">End-to-end encryption. OTP verification. Trackable delivery. Peace of mind.</p>
+        <a href="checkout.html" class="btn btn-primary">Go to Checkout</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- BOTTOM ICON NAVIGATION -->
+  <footer class="bottom-nav">
+    <nav class="icon-nav">
+      <a href="index.html"><img src="icons/home.svg" alt="Home" /></a>
+      <a href="about.html"><img src="icons/user.svg" alt="About" /></a>
+      <a href="product.html" class="active"><img src="icons/bag.svg" alt="Shop" /></a>
+      <a href="contact.html"><img src="icons/message.svg" alt="Contact" /></a>
+    </nav>
+  </footer>
+</body>
+</html>
