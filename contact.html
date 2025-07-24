@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lonz Flawls Aura | Golden Contact Portal</title>
+    <meta name="description" content="Enter our golden portal to connect with the Flawls Aura experience - where luxury meets transformation.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #FFD700;
+            --gold-light: rgba(255, 215, 0, 0.3);
+            --gold-lighter: rgba(255, 215, 0, 0.1);
+            --black: #0F0F0F;
+            --white: #F9F9F9;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Golden Rain Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15,15,15,0.95), rgba(25,20,10,0.9));
+            z-index: -2;
+        }
+        
+        /* Golden Lines Animation */
+        .golden-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        
+        .golden-lines span {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to top, var(--gold), transparent);
+            animation: goldenRain 8s linear infinite;
+        }
+        
+        .golden-lines span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 6s;
+        }
+        
+        .golden-lines span:nth-child(2) {
+            left: 20%;
+            animation-delay: 1s;
+            animation-duration: 8s;
+        }
+        
+        .golden-lines span:nth-child(3) {
+            left: 35%;
+            animation-delay: 2.5s;
+            animation-duration: 7s;
+        }
+        
+        .golden-lines span:nth-child(4) {
+            left: 50%;
+            animation-delay: 0.5s;
+            animation-duration: 9s;
+        }
+        
+        .golden-lines span:nth-child(5) {
+            left: 65%;
+            animation-delay: 3s;
+            animation-duration: 6.5s;
+        }
+        
+        .golden-lines span:nth-child(6) {
+            left: 80%;
+            animation-delay: 1.5s;
+            animation-duration: 7.5s;
+        }
+        
+        .golden-lines span:nth-child(7) {
+            left: 90%;
+            animation-delay: 2s;
+            animation-duration: 8.5s;
+        }
+        
+        @keyframes goldenRain {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: linear-gradient(to bottom, rgba(15,15,15,0.9), transparent);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(15, 15, 15, 0.95);
+            padding: 15px 40px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Animated Divider */
+        .divider {
+            height: 1px;
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.8), transparent);
+            animation: pulseLine 3s infinite;
+        }
+        
+        @keyframes pulseLine {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Glass Contact Form */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+        
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--white);
+            font-family: 'Manrope', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Silk Button */
+        .silk-btn {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .silk-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: 0.6s;
+        }
+        
+        .silk-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .silk-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Floating Icons Panel */
+        .social-panel {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 100;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--glass);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .social-icon:hover::before {
+            opacity: 1;
+        }
+        
+        .social-icon::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            opacity: 0;
+            animation: pulseGlow 2s infinite;
+        }
+        
+        .social-icon:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.8; }
+            70% { transform: scale(1.3); opacity: 0; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        
+        /* Footer */
+        footer {
+            padding: 80px 40px 40px;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .newsletter-form {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+        
+        .newsletter-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .newsletter-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: white;
+            font-family: 'Manrope', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .brand-quote {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 40px;
+            color: var(--gold);
+            position: relative;
+            padding-top: 20px;
+        }
+        
+        .brand-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .social-panel {
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .social-panel {
+                display: none;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .newsletter-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Golden Lines Background -->
+    <div class="golden-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">Lonz Flawls Aura<span></span></a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Step into the Aura</h1>
+            <p>This is your golden line to flawless transformation</p>
+        </div>
+    </section>
+    
+    <!-- Animated Divider -->
+    <div class="divider"></div>
+    
+    <!-- Contact Form -->
+    <div class="contact-container">
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email address">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" class="form-control" placeholder="How can we elevate your aura today?"></textarea>
+            </div>
+            
+            <button type="submit" class="silk-btn">Send Your Aura</button>
+        </form>
+    </div>
+    
+    <!-- Floating Social Icons -->
+    <div class="social-panel">
+        <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="far fa-envelope"></i>
+        </a>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter-form">
+                <h3 class="newsletter-title">Join Our Golden Circle</h3>
+                <form class="newsletter-group">
+                    <input type="email" class="newsletter-input" placeholder="Your email address">
+                    <button type="submit" class="silk-btn" style="width: auto; padding: 15px 25px;">Subscribe</button>
+                </form>
+            </div>
+            
+            <p class="brand-quote">Lonz Flawls Aura – Where Every Skin Speaks Luxury.</p>
+            
+            <div class="copyright">
+                &copy; 2023 Lonz Flawls Aura. All rights reserved. | Crafted with alchemy in our digital atelier.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Animate form on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            form.style.opacity = '0';
+            form.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                form.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                form.style.opacity = '1';
+                form.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
