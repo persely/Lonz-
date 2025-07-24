@@ -1,600 +1,857 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="lonzflawlsaura">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shop premium skincare products by Lonz Flawls Aura. Science meets nature in every drop. Secure checkout. Global shipping.">
-  <meta name="author" content="Lonz Flawls Aura" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  
-  <!-- Primary Meta Tags -->
-  <title>Premium Skincare Products | Lonz Flawls Aura</title>
-  <meta name="title" content="Premium Skincare Products | Lonz Flawls Aura">
-  <meta name="keywords" content="luxury skincare, glow serum, kojic soap, tissue oil, South African beauty products">
-  
-  <!-- Favicons & Icons -->
-  <link rel="icon" href="icons/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-  <link rel="manifest" href="manifest.json">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/products.css" />
-  <link rel="stylesheet" href="styles/firewall.css" />
-  <link rel="stylesheet" href="styles/icons.css" />
-  <link rel="stylesheet" href="styles/animations.css" />
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
-  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous" defer></script>
-
-  <!-- Speed Optimizations -->
-  <link rel="preload" href="images/products/extra-glow-lotion.jpg" as="image">
-  <link rel="preload" href="scripts/products.js" as="script">
-  
-  <!-- Schema.org Markup -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Premium Skincare Products | Lonz Flawls Aura",
-      "description": "Shop luxury skincare products combining nature and science for radiant skin",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Lonz Flawls Aura",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://lonzflawlsaura.com/images/logo.svg"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lonz Flawls Aura | Cyber Luxury Beauty Products</title>
+    <meta name="description" content="Experience flawless transformation with our premium beauty products - from luxury skincare to human hair wigs and nail artistry.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <style>
+        :root {
+            --gold: #FFD700;
+            --gold-light: rgba(255, 215, 0, 0.3);
+            --black: #0F0F0F;
+            --white: #F9F9F9;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
         }
-      }
-    }
-  </script>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Luxury Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        
+        /* Glow Effect */
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* Section Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-section {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: linear-gradient(to bottom, rgba(15,15,15,0.9), transparent);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(15, 15, 15, 0.95);
+            padding: 15px 40px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.4;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15,15,15,0.2), rgba(15,15,15,0.8));
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            animation: fadeIn 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        /* Silk Button */
+        .silk-btn {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .silk-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: 0.6s;
+        }
+        
+        .silk-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .silk-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Product Sections */
+        .product-section {
+            padding: 120px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-section:nth-child(even) {
+            background: rgba(15, 15, 15, 0.5);
+        }
+        
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .product-image-container {
+            flex: 1;
+            position: relative;
+            min-height: 500px;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .product-image.active {
+            opacity: 1;
+        }
+        
+        .product-content {
+            flex: 1;
+        }
+        
+        .product-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .product-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+            line-height: 1.2;
+        }
+        
+        .product-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .product-details {
+            margin-bottom: 30px;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+        }
+        
+        .detail-title {
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        
+        .detail-content {
+            opacity: 0.8;
+        }
+        
+        .chemical-free-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .chemical-free-badge::before {
+            content: '✨';
+            margin-right: 8px;
+        }
+        
+        /* Product Navigation */
+        .product-nav {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: rgba(15, 15, 15, 0.7);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .product-nav-list {
+            list-style: none;
+        }
+        
+        .product-nav-item {
+            margin-bottom: 10px;
+        }
+        
+        .product-nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        .product-nav-link:hover, .product-nav-link.active {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 80px 40px 40px;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .footer-about {
+            opacity: 0.7;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        
+        .newsletter-form {
+            margin-top: 30px;
+        }
+        
+        .newsletter-title {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: white;
+            font-family: 'Manrope', sans-serif;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Floating Chat */
+        .floating-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-chat:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .product-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .product-image-container {
+                min-height: 400px;
+                width: 100%;
+            }
+            
+            .product-nav {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .product-title {
+                font-size: 2.2rem;
+            }
+            
+            .product-section {
+                padding: 80px 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Sparkle Effect */
+        .sparkle {
+            position: relative;
+        }
+        
+        .sparkle::after {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.2rem;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+    </style>
 </head>
-
-<body class="products-page">
-  <!-- 🔒 Security Lock (Hidden from visual users) -->
-  <div id="secure-lock" aria-hidden="true"></div>
-
-  <!-- ==================== -->
-  <!-- 🎀 MAIN NAVIGATION -->
-  <!-- ==================== -->
-  <header class="header" role="banner">
-    <div class="container">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.svg" alt="Lonz Flawls Aura - Premium Skincare" class="logo" width="180" height="60" loading="eager">
-      </a>
-      
-      <nav class="bottom-nav" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link" aria-label="Home">
-              <span class="icon-home" aria-hidden="true"></span>
-              <span class="nav-text">Home</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link" aria-label="About Us">
-              <span class="icon-info" aria-hidden="true"></span>
-              <span class="nav-text">About</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="product.html" class="nav-link active" aria-current="page" aria-label="Products">
-              <span class="icon-shopping-bag" aria-hidden="true"></span>
-              <span class="nav-text">Products</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link" aria-label="Contact">
-              <span class="icon-envelope" aria-hidden="true"></span>
-              <span class="nav-text">Contact</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main-content" role="main">
-    <!-- ==================== -->
-    <!-- 🌟 PRODUCT HERO -->
-    <!-- ==================== -->
-    <section class="hero-banner product-hero fade-in">
-      <div class="container">
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">Lonz Flawls Aura<span></span></a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-clear-oil-dropping-on-a-surface-23639-large.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-          <h1 class="hero-title">Find Your Perfect Glow</h1>
-          <p class="hero-subtitle">Curated skincare essentials powered by nature, perfected by science.</p>
-          <a href="#featured-products" class="btn btn-primary scroll-link" aria-label="View our signature products">
-            Discover Now
-            <span class="icon-arrow-right" aria-hidden="true"></span>
-          </a>
+            <h1>Flawless Awaits</h1>
+            <p>Step into our digital temple of beauty perfection where every product is crafted to elevate your aura to celestial heights.</p>
+            <a href="#propyloid" class="silk-btn">Explore Products</a>
         </div>
-      </div>
     </section>
-
-    <!-- ==================== -->
-    <!-- 💎 FEATURED PRODUCTS -->
-    <!-- ==================== -->
-    <section id="featured-products" class="section products-grid-section" aria-labelledby="featured-products-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="featured-products-heading" class="section-title">Our Signature Collection</h2>
-          <p class="section-subtitle">Science meets nature in every formula.</p>
-        </header>
-        
-        <div class="products-grid">
-          <!-- Product Card 1 -->
-          <article class="product-card scale-hover" itemscope itemtype="https://schema.org/Product">
-            <figure class="product-figure">
-              <img src="images/products/extra-glow-lotion.jpg" alt="Extra Glow Lotion" class="product-img" loading="lazy" width="400" height="400" itemprop="image">
-              <figcaption class="visually-hidden">Extra Glow Lotion product image</figcaption>
-            </figure>
-            <div class="product-details">
-              <h3 class="product-name" itemprop="name">Extra Glow Lotion</h3>
-              <p class="product-desc" itemprop="description">Hydrates and illuminates dull skin. A perfect daily formula for long-lasting radiance.</p>
-              <div class="product-meta">
-                <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <meta itemprop="priceCurrency" content="ZAR">
-                  <span itemprop="price">R149.99</span>
-                </span>
-                <button class="btn view-details" data-product="lotion" aria-expanded="false" aria-controls="product-lotion-details">
-                  View Benefits
-                  <span class="icon-plus" aria-hidden="true"></span>
-                </button>
-              </div>
-            </div>
-            <div id="product-lotion-details" class="product-benefits" hidden>
-              <!-- Benefits content here -->
-            </div>
-          </article>
-
-          <!-- Product Card 2 -->
-          <article class="product-card scale-hover" itemscope itemtype="https://schema.org/Product">
-            <figure class="product-figure">
-              <img src="images/products/kojic-soap.jpg" alt="Kojic Soap" class="product-img" loading="lazy" width="400" height="400" itemprop="image">
-              <figcaption class="visually-hidden">Kojic Soap product image</figcaption>
-            </figure>
-            <div class="product-details">
-              <h3 class="product-name" itemprop="name">Kojic Soap</h3>
-              <p class="product-desc" itemprop="description">Fades dark spots and brightens uneven tone. Pure, rich and balanced with organic ingredients.</p>
-              <div class="product-meta">
-                <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <meta itemprop="priceCurrency" content="ZAR">
-                  <span itemprop="price">R59.99</span>
-                </span>
-                <button class="btn view-details" data-product="soap" aria-expanded="false" aria-controls="product-soap-details">
-                  View Benefits
-                  <span class="icon-plus" aria-hidden="true"></span>
-                </button>
-              </div>
-            </div>
-            <div id="product-soap-details" class="product-benefits" hidden>
-              <!-- Benefits content here -->
-            </div>
-          </article>
-
-          <!-- Product Card 3 -->
-          <article class="product-card scale-hover" itemscope itemtype="https://schema.org/Product">
-            <figure class="product-figure">
-              <img src="images/products/extra-glow-oil.jpg" alt="Extra Glow Tissue Oil" class="product-img" loading="lazy" width="400" height="400" itemprop="image">
-              <figcaption class="visually-hidden">Extra Glow Tissue Oil product image</figcaption>
-            </figure>
-            <div class="product-details">
-              <h3 class="product-name" itemprop="name">Extra Glow Tissue Oil</h3>
-              <p class="product-desc" itemprop="description">Repairs and strengthens the skin barrier. Deep nourishment from organic African botanicals.</p>
-              <div class="product-meta">
-                <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <meta itemprop="priceCurrency" content="ZAR">
-                  <span itemprop="price">R129.99</span>
-                </span>
-                <button class="btn view-details" data-product="oil" aria-expanded="false" aria-controls="product-oil-details">
-                  View Benefits
-                  <span class="icon-plus" aria-hidden="true"></span>
-                </button>
-              </div>
-            </div>
-            <div id="product-oil-details" class="product-benefits" hidden>
-              <!-- Benefits content here -->
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== -->
-    <!-- 🔥 COMBO DEALS -->
-    <!-- ==================== -->
-    <section class="section combo-offers bg-light" aria-labelledby="combo-deals-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="combo-deals-heading" class="section-title">Curated Skincare Sets</h2>
-          <p class="section-subtitle">Save more while achieving your glow goals</p>
-        </header>
-        
-        <div class="combo-grid">
-          <!-- Combo 1 -->
-          <article class="combo-card" itemscope itemtype="https://schema.org/Product">
-            <div class="combo-badge">Most Popular</div>
-            <figure class="combo-figure">
-              <img src="images/combo1.jpg" alt="Extra Glow Combo" class="combo-img" loading="lazy" width="600" height="400" itemprop="image">
-            </figure>
-            <div class="combo-details">
-              <h3 class="combo-name" itemprop="name">Extra Glow Combo</h3>
-              <ul class="combo-includes">
-                <li itemprop="description">Extra Glow Tissue Oil</li>
-                <li itemprop="description">Extra Glow Lotion</li>
-                <li itemprop="description">Kojic Soap</li>
-              </ul>
-              <div class="combo-pricing">
-                <span class="combo-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <meta itemprop="priceCurrency" content="ZAR">
-                  <span itemprop="price">R299.99</span>
-                </span>
-                <span class="combo-savings">Save 18%</span>
-              </div>
-              <button class="btn combo-btn" aria-label="Add Extra Glow Combo to cart">
-                Add to Cart
-                <span class="icon-shopping-cart" aria-hidden="true"></span>
-              </button>
-            </div>
-          </article>
-
-          <!-- Combo 2 -->
-          <article class="combo-card" itemscope itemtype="https://schema.org/Product">
-            <div class="combo-badge">New Arrival</div>
-            <figure class="combo-figure">
-              <img src="images/combo2.jpg" alt="Ultimate Repair Kit" class="combo-img" loading="lazy" width="600" height="400" itemprop="image">
-            </figure>
-            <div class="combo-details">
-              <h3 class="combo-name" itemprop="name">Ultimate Repair Kit</h3>
-              <ul class="combo-includes">
-                <li itemprop="description">Glow Serum</li>
-                <li itemprop="description">Night Repair Mask</li>
-                <li itemprop="description">Kojic Soap</li>
-              </ul>
-              <div class="combo-pricing">
-                <span class="combo-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <meta itemprop="priceCurrency" content="ZAR">
-                  <span itemprop="price">R349.99</span>
-                </span>
-                <span class="combo-savings">Save 22%</span>
-              </div>
-              <button class="btn combo-btn" aria-label="Add Ultimate Repair Kit to cart">
-                Add to Cart
-                <span class="icon-shopping-cart" aria-hidden="true"></span>
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== -->
-    <!-- 🌿 INGREDIENT SPOTLIGHT -->
-    <!-- ==================== -->
-    <section id="ingredients" class="section ingredients-section" aria-labelledby="ingredients-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="ingredients-heading" class="section-title">Ingredient Spotlight</h2>
-          <p class="section-subtitle">Discover the natural power behind every formula</p>
-        </header>
-        
-        <div class="ingredients-grid">
-          <!-- Ingredient 1 -->
-          <article class="ingredient-card fade-in-up">
-            <figure class="ingredient-figure">
-              <img src="images/ingredients/kojic-acid.jpg" alt="Kojic Acid" class="ingredient-img" loading="lazy" width="300" height="300">
-            </figure>
-            <div class="ingredient-details">
-              <h3 class="ingredient-name">Kojic Acid</h3>
-              <p class="ingredient-desc">A natural brightening agent that reduces pigmentation and evens skin tone.</p>
-            </div>
-          </article>
-
-          <!-- Ingredient 2 -->
-          <article class="ingredient-card fade-in-up">
-            <figure class="ingredient-figure">
-              <img src="images/ingredients/shea-butter.jpg" alt="Shea Butter" class="ingredient-img" loading="lazy" width="300" height="300">
-            </figure>
-            <div class="ingredient-details">
-              <h3 class="ingredient-name">Shea Butter</h3>
-              <p class="ingredient-desc">Deeply moisturizes and soothes dry skin with rich vitamins.</p>
-            </div>
-          </article>
-
-          <!-- Ingredient 3 -->
-          <article class="ingredient-card fade-in-up">
-            <figure class="ingredient-figure">
-              <img src="images/ingredients/baobab-oil.jpg" alt="Baobab Oil" class="ingredient-img" loading="lazy" width="300" height="300">
-            </figure>
-            <div class="ingredient-details">
-              <h3 class="ingredient-name">Baobab Oil</h3>
-              <p class="ingredient-desc">Packed with antioxidants to restore skin elasticity and glow.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== -->
-    <!-- 💬 CUSTOMER REVIEWS -->
-    <!-- ==================== -->
-    <section id="reviews" class="section reviews-section bg-light" aria-labelledby="reviews-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="reviews-heading" class="section-title">Glowing Testimonials</h2>
-          <p class="section-subtitle">What our community says</p>
-        </header>
-        
-        <div class="reviews-grid">
-          <!-- Review 1 -->
-          <article class="review-card" itemscope itemtype="https://schema.org/Review">
-            <div class="review-content" itemprop="reviewBody">
-              <p>"The Extra Glow Lotion has completely changed my skincare routine! My skin feels hydrated and radiant."</p>
-            </div>
-            <footer class="review-footer">
-              <span class="review-author" itemprop="author">Lindiwe T.</span>
-              <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                <meta itemprop="ratingValue" content="5">
-                <span class="stars">★★★★★</span>
-              </div>
-            </footer>
-          </article>
-
-          <!-- Review 2 -->
-          <article class="review-card" itemscope itemtype="https://schema.org/Review">
-            <div class="review-content" itemprop="reviewBody">
-              <p>"I love the Kojic Soap—it gently brightens my skin without any irritation."</p>
-            </div>
-            <footer class="review-footer">
-              <span class="review-author" itemprop="author">Sipho M.</span>
-              <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                <meta itemprop="ratingValue" content="5">
-                <span class="stars">★★★★★</span>
-              </div>
-            </footer>
-          </article>
-
-          <!-- Review 3 -->
-          <article class="review-card" itemscope itemtype="https://schema.org/Review">
-            <div class="review-content" itemprop="reviewBody">
-              <p>"The tissue oil is amazing for my dry patches. Highly recommend it!"</p>
-            </div>
-            <footer class="review-footer">
-              <span class="review-author" itemprop="author">Aisha K.</span>
-              <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                <meta itemprop="ratingValue" content="5">
-                <span class="stars">★★★★★</span>
-              </div>
-            </footer>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== -->
-    <!-- ❓ FAQ SECTION -->
-    <!-- ==================== -->
-    <section id="faq" class="section faq-section" aria-labelledby="faq-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Everything you need to know</p>
-        </header>
-        
-        <div class="faq-list">
-          <!-- FAQ Item 1 -->
-          <article class="faq-item">
-            <h3 class="faq-question">
-              <button class="faq-toggle" aria-expanded="false" aria-controls="faq1">
-                Are your products suitable for all skin types?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq1" class="faq-answer" hidden>
-              <p>Yes! Our products are carefully formulated to work well on most skin types, including sensitive skin. We recommend patch testing if you have particularly reactive skin.</p>
-            </div>
-          </article>
-
-          <!-- FAQ Item 2 -->
-          <article class="faq-item">
-            <h3 class="faq-question">
-              <button class="faq-toggle" aria-expanded="false" aria-controls="faq2">
-                How long does shipping take?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq2" class="faq-answer" hidden>
-              <p>Standard delivery usually takes 3-5 business days within South Africa. We offer express shipping options at checkout for faster delivery.</p>
-            </div>
-          </article>
-
-          <!-- FAQ Item 3 -->
-          <article class="faq-item">
-            <h3 class="faq-question">
-              <button class="faq-toggle" aria-expanded="false" aria-controls="faq3">
-                Can I return a product if I'm not satisfied?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq3" class="faq-answer" hidden>
-              <p>We offer a 14-day return policy on unopened products in their original packaging. For opened products, we provide store credit. Please contact our support team for assistance with returns.</p>
-            </div>
-          </article>
-
-          <!-- FAQ Item 4 -->
-          <article class="faq-item">
-            <h3 class="faq-question">
-              <button class="faq-toggle" aria-expanded="false" aria-controls="faq4">
-                Are your products cruelty-free?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq4" class="faq-answer" hidden>
-              <p>Absolutely! We never test on animals and all our ingredients are ethically sourced. We're proud to be a 100% cruelty-free brand.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== -->
-    <!-- 📧 NEWSLETTER -->
-    <!-- ==================== -->
-    <section class="section newsletter-section bg-accent" aria-labelledby="newsletter-heading">
-      <div class="container">
-        <div class="newsletter-content">
-          <header class="newsletter-header">
-            <h2 id="newsletter-heading" class="newsletter-title">Join Our Glow Community</h2>
-            <p class="newsletter-subtitle">Get exclusive offers and skincare tips</p>
-          </header>
-          
-          <form action="#" method="POST" class="newsletter-form">
-            <div class="form-group">
-              <label for="email" class="visually-hidden">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="Your email address" required class="form-input">
-              <button type="submit" class="btn btn-light">
-                Subscribe
-                <span class="icon-arrow-right" aria-hidden="true"></span>
-              </button>
-            </div>
-            <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== -->
-  <!-- 🏁 FOOTER -->
-  <!-- ==================== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand Info -->
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo">
-            <img src="images/logo-light.svg" alt="Lonz Flawls Aura" width="160" height="50" loading="lazy">
-          </a>
-          <p class="footer-tagline">Your glow, our promise.</p>
-          
-          <div class="footer-social">
-            <h3 class="social-heading">Connect With Us</h3>
-            <ul class="social-list">
-              <li><a href="#" class="social-link" aria-label="Instagram"><span class="icon-instagram" aria-hidden="true"></span></a></li>
-              <li><a href="#" class="social-link" aria-label="Facebook"><span class="icon-facebook" aria-hidden="true"></span></a></li>
-              <li><a href="#" class="social-link" aria-label="Twitter"><span class="icon-twitter" aria-hidden="true"></span></a></li>
-              <li><a href="#" class="social-link" aria-label="WhatsApp"><span class="icon-whatsapp" aria-hidden="true"></span></a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h3 class="footer-nav-heading">Quick Links</h3>
-          <ul class="footer-nav-list">
-            <li><a href="index.html" class="footer-nav-link">Home</a></li>
-            <li><a href="about.html" class="footer-nav-link">About Us</a></li>
-            <li><a href="products.html" class="footer-nav-link">Products</a></li>
-            <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
-            <li><a href="blog.html" class="footer-nav-link">Skincare Blog</a></li>
-          </ul>
-        </nav>
-
-        <!-- Customer Service -->
-        <nav class="footer-nav" aria-label="Customer service">
-          <h3 class="footer-nav-heading">Customer Service</h3>
-          <ul class="footer-nav-list">
-            <li><a href="shipping.html" class="footer-nav-link">Shipping Policy</a></li>
-            <li><a href="returns.html" class="footer-nav-link">Returns & Refunds</a></li>
-            <li><a href="privacy.html" class="footer-nav-link">Privacy Policy</a></li>
-            <li><a href="terms.html" class="footer-nav-link">Terms of Service</a></li>
-            <li><a href="faq.html" class="footer-nav-link">FAQs</a></li>
-          </ul>
-        </nav>
-
-        <!-- Contact Info -->
-        <address class="footer-contact">
-          <h3 class="footer-nav-heading">Contact Us</h3>
-          <ul class="contact-list">
-            <li class="contact-item">
-              <span class="icon-phone" aria-hidden="true"></span>
-              <a href="tel:+27123456789">+27 12 345 6789</a>
-            </li>
-            <li class="contact-item">
-              <span class="icon-email" aria-hidden="true"></span>
-              <a href="mailto:hello@lonzflawlsaura.com">hello@lonzflawlsaura.com</a>
-            </li>
-            <li class="contact-item">
-              <span class="icon-location" aria-hidden="true"></span>
-              <span>Tzaneen, Limpopo, South Africa</span>
-            </li>
-          </ul>
-        </address>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">&copy; <span id="year">2025</span> Lonz Flawls Aura. All rights reserved.</p>
-        <div class="payment-methods">
-          <img src="images/payments/visa.svg" alt="Visa" width="40" height="25" loading="lazy">
-          <img src="images/payments/mastercard.svg" alt="Mastercard" width="40" height="25" loading="lazy">
-          <img src="images/payments/payfast.svg" alt="PayFast" width="40" height="25" loading="lazy">
-        </div>
-      </div>
+    
+    <!-- Product Navigation -->
+    <div class="product-nav">
+        <ul class="product-nav-list">
+            <li class="product-nav-item"><a href="#propyloid" class="product-nav-link active">Skin Oils</a></li>
+            <li class="product-nav-item"><a href="#hyperskin" class="product-nav-link">Lotions</a></li>
+            <li class="product-nav-item"><a href="#" class="product-nav-link">Luxury Wigs</a></li>
+            <li class="product-nav-item"><a href="#" class="product-nav-link">Aura Nails</a></li>
+            <li class="product-nav-item"><a href="#" class="product-nav-link">Glow Kits</a></li>
+        </ul>
     </div>
-  </footer>
-
-  <!-- ==================== -->
-  <!-- 📱 BOTTOM NAV (MOBILE) -->
-  <!-- ==================== -->
-  <nav class="bottom-nav-mobile" aria-label="Mobile navigation">
-    <ul class="bottom-nav-list">
-      <li>
-        <a href="index.html" class="bottom-nav-link" aria-label="Home">
-          <span class="icon-home" aria-hidden="true"></span>
-          <span class="nav-label">Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="about.html" class="bottom-nav-link" aria-label="About">
-          <span class="icon-info" aria-hidden="true"></span>
-          <span class="nav-label">About</span>
-        </a>
-      </li>
-      <li>
-        <a href="products.html" class="bottom-nav-link active" aria-current="page" aria-label="Products">
-          <span class="icon-shopping-bag" aria-hidden="true"></span>
-          <span class="nav-label">Products</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html" class="bottom-nav-link" aria-label="Contact">
-          <span class="icon-envelope" aria-hidden="true"></span>
-          <span class="nav-label">Contact</span>
-        </a>
-      </li>
-      <li>
-        <a href="cart.html" class="bottom-nav-link" aria-label="Cart">
-          <span class="icon-shopping-cart" aria-hidden="true"></span>
-          <span class="nav-label">Cart</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- ==================== -->
-  <!-- 🚀 SCRIPTS -->
-  <!-- ==================== -->
-  <script src="scripts/firewall.js" defer></script>
-  <script src="scripts/products.js" defer></script>
-  <script src="scripts/app.js" defer></script>
-  
-  <!-- Current Year Script -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    
+    <!-- Propyloid Flawless Oil -->
+    <section class="product-section animate-section" id="propyloid">
+        <div class="product-container">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Propyloid Flawless Oil" class="product-image active">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Propyloid Flawless Oil" class="product-image">
+                <img src="https://images.unsplash.com/photo-1607602132700-06825813d3a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Propyloid Flawless Oil" class="product-image">
+            </div>
+            <div class="product-content">
+                <span class="product-tag">Bestseller</span>
+                <h2 class="product-title">Propyloid Flawless Oil</h2>
+                <p class="product-subtitle">Luxury in every drop</p>
+                
+                <div class="product-details">
+                    <div class="detail-item">
+                        <h4 class="detail-title">Key Ingredients</h4>
+                        <p class="detail-content">Grape Seed Oil, Vitamin E, Kojic Acid</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title">Benefits</h4>
+                        <p class="detail-content">Reduces dark spots, deeply hydrates, evens tone, gives a golden glow</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title">How To Use</h4>
+                        <p class="detail-content">Apply 2-3 drops to cleansed skin morning and night, gently pressing into skin</p>
+                    </div>
+                </div>
+                
+                <span class="chemical-free-badge">80% Chemical-Free Formula</span>
+                
+                <div style="margin-top: 40px;">
+                    <a href="#" class="silk-btn">Add to Aura — $98.00</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- HyperSkin Balance Lotion -->
+    <section class="product-section animate-section" id="hyperskin">
+        <div class="product-container">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="HyperSkin Balance Lotion" class="product-image active">
+                <img src="https://images.unsplash.com/photo-1556228578-32252ba8a88f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="HyperSkin Balance Lotion" class="product-image">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="HyperSkin Balance Lotion" class="product-image">
+            </div>
+            <div class="product-content">
+                <span class="product-tag">New Formula</span>
+                <h2 class="product-title">HyperSkin Balance Lotion</h2>
+                <p class="product-subtitle">Built for balance. Perfected for power.</p>
+                
+                <div class="product-details">
+                    <div class="detail-item">
+                        <h4 class="detail-title">Key Ingredients</h4>
+                        <p class="detail-content">Niacinamide, Tea Tree Oil, Aloe Vera</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title">Benefits</h4>
+                        <p class="detail-content">Calms inflammation, balances oil, clears acne, restores skin texture</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title">How To Use</h4>
+                        <p class="detail-content">Apply to clean skin after cleansing, focusing on areas of concern</p>
+                    </div>
+                </div>
+                
+                <span class="chemical-free-badge">80% Chemical-Free Formula</span>
+                
+                <div style="margin-top: 40px;">
+                    <a href="#" class="silk-btn">Add to Aura — $115.00</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- More Products Sections Would Go Here -->
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Lonz Flawls Aura</div>
+                <p class="footer-about">
+                    Where cyber luxury meets flawless beauty in a digital temple of transformation. Our products are crafted for those who demand perfection in every detail.
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Skin Oils</a></li>
+                    <li><a href="#">Balance Lotions</a></li>
+                    <li><a href="#">Luxury Wigs</a></li>
+                    <li><a href="#">Aura Nails</a></li>
+                    <li><a href="#">Glow Kits</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Skin Consultations</a></li>
+                    <li><a href="#">Wig Customization</a></li>
+                    <li><a href="#">Nail Artistry</a></li>
+                    <li><a href="#">Makeup Mastery</a></li>
+                    <li><a href="#">Personal Styling</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="newsletter-title">Lonz's Secret Vault</h3>
+                <p style="opacity: 0.7; margin-bottom: 15px; line-height: 1.6;">
+                    Subscribe for exclusive access to limited editions, secret formulas, and members-only content.
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address">
+                    <button type="submit" class="silk-btn" style="width: 100%;">Unlock Access</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Lonz Flawls Aura. All rights reserved. | Crafted with alchemy in our digital atelier.
+        </div>
+    </footer>
+    
+    <!-- Floating Chat -->
+    <div class="floating-chat">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Product image carousel
+        const productImages = document.querySelectorAll('.product-image-container');
+        productImages.forEach(container => {
+            const images = container.querySelectorAll('.product-image');
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, 3000);
+        });
+        
+        // Product navigation
+        const navLinks = document.querySelectorAll('.product-nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('.animate-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-section');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.product-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
