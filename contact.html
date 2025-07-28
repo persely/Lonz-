@@ -3,18 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Lonz Flawls Aura | Golden Contact Portal</title>
     <meta name="description" content="Enter our golden portal to connect with the Flawls Aura experience - where luxury meets transformation.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <meta property="og:title" content="Lonz Flawls Aura | Golden Contact Portal">
+    <meta property="og:description" content="Enter our golden portal to connect with the Flawls Aura experience - where luxury meets transformation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lonzflawlsaura.com">
+    <meta property="og:image" content="https://lonzflawlsaura.com/images/social-share.jpg">
+    <meta property="og:image:alt" content="Lonz Flawls Aura Golden Portal">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Lonz Flawls Aura">
+    <link rel="canonical" href="https://lonzflawlsaura.com/contact">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Manrope:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="flightjet.js" as="script">
+
+    <!-- DNS prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://lonzflawlsaura.com">
+
+    <!-- Fallback for non-JS browsers -->
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Manrope:wght@300;400;600&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </noscript>
+
+    <!-- Inline critical CSS -->
     <style>
+        /*! Critical CSS - Loads immediately */
         :root {
             --gold: #FFD700;
             --gold-light: rgba(255, 215, 0, 0.3);
@@ -24,36 +55,44 @@
             --glass: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.2);
             --glass-highlight: rgba(255, 255, 255, 0.15);
+            --transition-all: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Manrope', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background: var(--black);
             color: var(--white);
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
+            line-height: 1.6;
         }
-        
-        /* Golden Rain Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(15,15,15,0.95), rgba(25,20,10,0.9));
-            z-index: -2;
+
+        /* Fallback font until custom fonts load */
+        .fonts-loaded body {
+            font-family: 'Manrope', sans-serif;
         }
-        
-        /* Golden Lines Animation */
+
+        .fonts-loaded h1, 
+        .fonts-loaded h2, 
+        .fonts-loaded h3, 
+        .fonts-loaded h4, 
+        .fonts-loaded h5, 
+        .fonts-loaded h6 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Golden Rain Background - Critical Animation */
         .golden-lines {
             position: fixed;
             top: 0;
@@ -63,8 +102,9 @@
             overflow: hidden;
             z-index: -1;
             opacity: 0.15;
+            pointer-events: none;
         }
-        
+
         .golden-lines span {
             position: absolute;
             bottom: -50px;
@@ -73,74 +113,53 @@
             height: 50px;
             background: linear-gradient(to top, var(--gold), transparent);
             animation: goldenRain 8s linear infinite;
+            will-change: transform, opacity;
         }
-        
-        .golden-lines span:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-            animation-duration: 6s;
-        }
-        
-        .golden-lines span:nth-child(2) {
-            left: 20%;
-            animation-delay: 1s;
-            animation-duration: 8s;
-        }
-        
-        .golden-lines span:nth-child(3) {
-            left: 35%;
-            animation-delay: 2.5s;
-            animation-duration: 7s;
-        }
-        
-        .golden-lines span:nth-child(4) {
-            left: 50%;
-            animation-delay: 0.5s;
-            animation-duration: 9s;
-        }
-        
-        .golden-lines span:nth-child(5) {
-            left: 65%;
-            animation-delay: 3s;
-            animation-duration: 6.5s;
-        }
-        
-        .golden-lines span:nth-child(6) {
-            left: 80%;
-            animation-delay: 1.5s;
-            animation-duration: 7.5s;
-        }
-        
-        .golden-lines span:nth-child(7) {
-            left: 90%;
-            animation-delay: 2s;
-            animation-duration: 8.5s;
-        }
-        
+
         @keyframes goldenRain {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+
+        /* Loading Screen - Critical */
+        .luxury-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.8s ease-out;
         }
-        
-        /* Navigation */
+
+        .luxury-loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .luxury-loader::after {
+            content: '';
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--gold);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Navigation - Critical */
         .navbar {
             position: fixed;
             top: 0;
@@ -151,75 +170,33 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            transition: all 0.4s ease;
+            transition: var(--transition-all);
             background: linear-gradient(to bottom, rgba(15,15,15,0.9), transparent);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
-        
+
         .navbar.scrolled {
-            background: rgba(15, 15, 15, 0.95);
+            background: rgba(15, 15, 15, 0.98);
             padding: 15px 40px;
             border-bottom: 1px solid rgba(255, 215, 0, 0.1);
         }
-        
+
         .logo {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--gold);
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: var(--transition-all);
         }
-        
-        .logo span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: var(--white);
-            border-radius: 50%;
-            margin-left: 8px;
-            animation: pulse 2s infinite;
+
+        .logo:hover {
+            opacity: 0.8;
         }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.7; }
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
+
+        /* Hero - Critical */
         .hero {
             height: 60vh;
             display: flex;
@@ -228,511 +205,442 @@
             text-align: center;
             padding: 0 20px;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.3s;
         }
-        
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             margin-bottom: 1.5rem;
             background: linear-gradient(to right, #fff, var(--gold));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeIn 1s ease;
+            line-height: 1.2;
         }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Animated Divider */
-        .divider {
-            height: 1px;
-            width: 80%;
-            max-width: 800px;
-            margin: 40px auto;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .divider::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.8), transparent);
-            animation: pulseLine 3s infinite;
-        }
-        
-        @keyframes pulseLine {
-            0% { transform: translateX(-100%); }
-            50% { transform: translateX(100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        /* Glass Contact Form */
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 60vh;
-            padding: 40px 20px;
-        }
-        
-        .contact-form {
-            width: 100%;
-            max-width: 600px;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-form::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--gold);
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            color: var(--white);
-            font-family: 'Manrope', sans-serif;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Silk Button */
-        .silk-btn {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 15px 30px;
-            border-radius: 50px;
+
+        /* Ensure content is visible while fonts load */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 500;
             letter-spacing: 0.5px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            font-size: 1rem;
-            width: 100%;
-            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .silk-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            transition: 0.6s;
+
+        /* Security and performance optimizations */
+        img, iframe {
+            max-width: 100%;
+            height: auto;
         }
-        
-        .silk-btn:hover {
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-            transform: translateY(-2px);
+
+        a, button {
+            transition: var(--transition-all);
         }
-        
-        .silk-btn:hover::before {
-            left: 100%;
-        }
-        
-        /* Floating Icons Panel */
-        .social-panel {
-            position: fixed;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 100;
-        }
-        
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--glass);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            color: var(--gold);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
-        }
-        
-        .social-icon:hover::before {
-            opacity: 1;
-        }
-        
-        .social-icon::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            border: 1px solid var(--gold);
-            opacity: 0;
-            animation: pulseGlow 2s infinite;
-        }
-        
-        .social-icon:hover::after {
-            opacity: 1;
-        }
-        
-        @keyframes pulseGlow {
-            0% { transform: scale(1); opacity: 0.8; }
-            70% { transform: scale(1.3); opacity: 0; }
-            100% { transform: scale(1.3); opacity: 0; }
-        }
-        
-        /* Footer */
-        footer {
-            padding: 80px 40px 40px;
-            position: relative;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .newsletter-form {
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 40px;
-        }
-        
-        .newsletter-title {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--gold);
-        }
-        
-        .newsletter-group {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .newsletter-input {
-            flex: 1;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            color: white;
-            font-family: 'Manrope', sans-serif;
-            transition: all 0.3s ease;
-        }
-        
-        .newsletter-input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-        }
-        
-        .brand-quote {
-            text-align: center;
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-top: 40px;
-            color: var(--gold);
-            position: relative;
-            padding-top: 20px;
-        }
-        
-        .brand-quote::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 1px;
-            background: var(--gold);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-            margin-top: 40px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            
-            .social-panel {
-                right: 20px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero {
-                height: 50vh;
-            }
-            
-            .social-panel {
-                display: none;
-            }
-            
-            .contact-form {
-                padding: 30px 20px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .newsletter-group {
-                flex-direction: column;
-            }
+
+        /* Content Security Policy nonce placeholder */
+        [nonce] {
+            display: none;
         }
     </style>
-<link rel="stylesheet" href="style.css">
 
+    <!-- Deferred full CSS -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
 </head>
+
 <body>
+    <!-- Loading Screen -->
+    <div class="luxury-loader"></div>
+
     <!-- Golden Lines Background -->
     <div class="golden-lines">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span style="left: 10%; animation-delay: 0s; animation-duration: 6s;"></span>
+        <span style="left: 20%; animation-delay: 1s; animation-duration: 8s;"></span>
+        <span style="left: 35%; animation-delay: 2.5s; animation-duration: 7s;"></span>
+        <span style="left: 50%; animation-delay: 0.5s; animation-duration: 9s;"></span>
+        <span style="left: 65%; animation-delay: 3s; animation-duration: 6.5s;"></span>
+        <span style="left: 80%; animation-delay: 1.5s; animation-duration: 7.5s;"></span>
+        <span style="left: 90%; animation-delay: 2s; animation-duration: 8.5s;"></span>
     </div>
-    
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <a href="#" class="logo">Lonz Flawls Aura<span></span></a>
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="/" class="logo" aria-label="Lonz Flawls Aura Home">
+            Lonz Flawls Aura
+            <span class="logo-dot" aria-hidden="true"></span>
+        </a>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="/" aria-current="page">Home</a>
+            <a href="/products">Products</a>
+            <a href="/services">Services</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
         </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
     </nav>
-    
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/products">Products</a>
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Step into the Aura</h1>
             <p>This is your golden line to flawless transformation</p>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <span class="scroll-line"></span>
+            </div>
         </div>
     </section>
-    
+
     <!-- Animated Divider -->
-    <div class="divider"></div>
-    
+    <div class="divider" role="presentation"></div>
+
     <!-- Contact Form -->
     <div class="contact-container">
-        <form class="contact-form">
+        <form class="contact-form" id="golden-contact-form" novalidate>
             <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required
+                    pattern="[A-Za-z ]{2,}" title="Please enter at least 2 alphabetical characters">
+                <div class="form-error" id="name-error" aria-live="polite"></div>
             </div>
-            
+
             <div class="form-group">
                 <label for="email">Your Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Enter your email address">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                <div class="form-error" id="email-error" aria-live="polite"></div>
             </div>
-            
+
             <div class="form-group">
                 <label for="message">Your Message</label>
-                <textarea id="message" class="form-control" placeholder="How can we elevate your aura today?"></textarea>
+                <textarea id="message" name="message" class="form-control" placeholder="How can we elevate your aura today?" required minlength="10"></textarea>
+                <div class="form-error" id="message-error" aria-live="polite"></div>
             </div>
-            
-            <button type="submit" class="silk-btn">Send Your Aura</button>
+
+            <div class="form-group" hidden aria-hidden="true">
+                <label for="honeypot">Leave this field empty</label>
+                <input type="text" id="honeypot" name="honeypot" tabindex="-1">
+            </div>
+
+            <button type="submit" class="silk-btn" aria-label="Submit your message">
+                <span class="btn-text">Send Your Aura</span>
+                <span class="btn-loader" aria-hidden="true"></span>
+            </button>
         </form>
     </div>
-    
+
     <!-- Floating Social Icons -->
-    <div class="social-panel">
-        <a href="#" class="social-icon">
-            <i class="fab fa-instagram"></i>
+    <div class="social-panel" aria-label="Social media links">
+        <a href="https://instagram.com/lonzflawlsaura" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
-        <a href="#" class="social-icon">
-            <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/1234567890" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
-        <a href="#" class="social-icon">
-            <i class="far fa-envelope"></i>
+        <a href="mailto:contact@lonzflawlsaura.com" class="social-icon" aria-label="Email">
+            <i class="far fa-envelope" aria-hidden="true"></i>
         </a>
     </div>
-    
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal" role="dialog" aria-modal="false" aria-labelledby="modal-title" aria-describedby="modal-desc">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+            <h2 id="modal-title">Message Received</h2>
+            <p id="modal-desc">Your aura has been successfully transmitted. We'll respond within 24 hours.</p>
+            <button class="modal-close silk-btn" aria-label="Close this dialog">Continue Browsing</button>
+        </div>
+        <div class="modal-overlay"></div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="newsletter-form">
                 <h3 class="newsletter-title">Join Our Golden Circle</h3>
-                <form class="newsletter-group">
-                    <input type="email" class="newsletter-input" placeholder="Your email address">
-                    <button type="submit" class="silk-btn" style="width: auto; padding: 15px 25px;">Subscribe</button>
+                <form class="newsletter-group" id="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required
+                        aria-label="Your email address for newsletter subscription">
+                    <button type="submit" class="silk-btn" style="width: auto; padding: 15px 25px;" aria-label="Subscribe to newsletter">
+                        Subscribe
+                    </button>
                 </form>
             </div>
-            
+
             <p class="brand-quote">Lonz Flawls Aura – Where Every Skin Speaks Luxury.</p>
-            
+
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/cookies">Cookie Policy</a>
+                <a href="/accessibility">Accessibility</a>
+            </div>
+
             <div class="copyright">
-                &copy; 2023 Lonz Flawls Aura. All rights reserved. | Crafted with alchemy in our digital atelier.
+                &copy; <span id="current-year">2023</span> Lonz Flawls Aura. All rights reserved.<br>
+                Crafted with alchemy in our digital atelier.
             </div>
         </div>
     </footer>
-    
+
+    <!-- Full CSS (loaded asynchronously) -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+
+    <!-- JavaScript with progressive enhancement -->
     <script>
-        // Navbar scroll effect
+        // Immediately set fonts-loaded class when fonts are ready
+        document.documentElement.classList.add('fonts-loaded');
+
+        // Font loading observer
+        if ('fonts' in document) {
+            Promise.all([
+                document.fonts.load('1em Manrope'),
+                document.fonts.load('1em Cormorant Garamond')
+            ]).then(() => {
+                document.documentElement.classList.add('fonts-loaded');
+                sessionStorage.setItem('fonts-loaded', 'true');
+            });
+        }
+
+        // Loader removal
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.luxury-loader').classList.add('fade-out');
+                setTimeout(function() {
+                    document.querySelector('.luxury-loader').style.display = 'none';
+                }, 800);
+            }, 500);
+
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+
+        // Scroll handler with debounce
+        let scrollTimeout;
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }, 10);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            document.getElementById('mobile-menu').ariaHidden = expanded;
+        });
+
+        // Form validation
+        const contactForm = document.getElementById('golden-contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (validateForm()) {
+                    submitForm();
+                }
+            });
+
+            // Add real-time validation
+            const fields = contactForm.querySelectorAll('[required]');
+            fields.forEach(field => {
+                field.addEventListener('input', function() {
+                    validateField(this);
+                });
+                field.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const fields = contactForm.querySelectorAll('[required]');
+            
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            // Check honeypot
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot.value !== '') {
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function validateField(field) {
+            const errorElement = document.getElementById(`${field.id}-error`);
+            
+            if (field.validity.valid && (field.id !== 'honeypot' || field.value === '')) {
+                field.classList.remove('invalid');
+                if (errorElement) errorElement.textContent = '';
+                return true;
             } else {
-                navbar.classList.remove('scrolled');
+                field.classList.add('invalid');
+                if (errorElement) {
+                    if (field.validity.valueMissing) {
+                        errorElement.textContent = 'This field is required';
+                    } else if (field.validity.typeMismatch) {
+                        errorElement.textContent = 'Please enter a valid email address';
+                    } else if (field.validity.patternMismatch) {
+                        errorElement.textContent = 'Please enter at least 2 alphabetical characters';
+                    } else if (field.validity.tooShort) {
+                        errorElement.textContent = `Message must be at least ${field.minLength} characters`;
+                    }
+                }
+                return false;
+            }
+        }
+
+        function submitForm() {
+            const formData = new FormData(contactForm);
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            
+            // Show loading state
+            btnText.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            btnLoader.style.display = 'block';
+            
+            // Simulate API call
+            setTimeout(function() {
+                // Hide loading state
+                btnText.textContent = 'Message Sent!';
+                btnLoader.style.display = 'none';
+                
+                // Show success modal
+                const modal = document.getElementById('success-modal');
+                modal.setAttribute('aria-modal', 'true');
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Reset form after delay
+                setTimeout(function() {
+                    contactForm.reset();
+                    btnText.textContent = 'Send Your Aura';
+                    submitBtn.disabled = false;
+                }, 2000);
+            }, 1500);
+        }
+
+        // Modal close handler
+        document.querySelector('.modal-close').addEventListener('click', function() {
+            const modal = document.getElementById('success-modal');
+            modal.setAttribute('aria-modal', 'false');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+
+        // Close modal when clicking overlay
+        document.querySelector('.modal-overlay').addEventListener('click', function() {
+            document.querySelector('.modal-close').click();
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelector('.modal-close').click();
             }
         });
-        
-        // Animate form on load
+
+        // Service worker registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
+        // Preload hover states
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('.contact-form');
-            form.style.opacity = '0';
-            form.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                form.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                form.style.opacity = '1';
-                form.style.transform = 'translateY(0)';
-            }, 300);
+            const hoverElements = document.querySelectorAll('a, button, .social-icon, .silk-btn');
+            hoverElements.forEach(el => {
+                el.style.transform = 'translateZ(0)';
+                el.style.backfaceVisibility = 'hidden';
+            });
+        });
+
+        // Intersection Observer for animations
+        if ('IntersectionObserver' in window) {
+            const animateOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                animateOnScroll.observe(el);
+            });
+        }
+
+        // WebP feature detection
+        function checkWebP() {
+            return new Promise(resolve => {
+                const webP = new Image();
+                webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+                webP.onload = webP.onerror = function() {
+                    resolve(webP.height === 2);
+                };
+            });
+        }
+
+        checkWebP().then(hasWebP => {
+            document.documentElement.classList.toggle('webp', hasWebP);
+            document.documentElement.classList.toggle('no-webp', !hasWebP);
         });
     </script>
 
+    <!-- Deferred JavaScript -->
+    <script src="flightjet.js" defer></script>
 
-  <script src="flightjet.js"></script>
-
+    <!-- Fallback for JS disabled -->
+    <noscript>
+        <style>
+            .luxury-loader, .no-js-message { display: none !important; }
+            body { opacity: 1 !important; }
+            .no-js-fallback { display: block !important; padding: 2rem; text-align: center; }
+        </style>
+        <div class="no-js-fallback">
+            <h2>JavaScript is disabled</h2>
+            <p>For the full Lonz Flawls Aura experience, please enable JavaScript in your browser.</p>
+            <p>Contact us directly at <a href="mailto:contact@lonzflawlsaura.com">contact@lonzflawlsaura.com</a></p>
+        </div>
+    </noscript>
 </body>
 </html>
