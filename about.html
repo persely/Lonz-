@@ -13,11 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Your original style.css link - now optimized -->
+    <!-- Fixed style.css linkage for GitHub Pages -->
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <!-- Your original internal styles - now enhanced with luxury elements -->
     <style>
         /* Your original root variables - now with luxury additions */
         :root {
@@ -36,34 +35,26 @@
             --text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             --transition-all: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
-
-        /* Your original base styles remain untouched */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Manrope', sans-serif;
             background-color: var(--cream);
             color: var(--soft-black);
             line-height: 1.6;
             overflow-x: hidden;
-            /* Luxury smooth scrolling */
             scroll-behavior: smooth;
         }
-
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 500;
             letter-spacing: 0.5px;
             line-height: 1.3;
-            /* Luxury text enhancement */
             text-shadow: var(--text-shadow);
         }
-
-        /* Enhanced Hero Section with luxury animations */
         .hero {
             height: 100vh;
             display: flex;
@@ -74,17 +65,13 @@
             position: relative;
             background: linear-gradient(135deg, var(--blush), var(--sand-gold));
             overflow: hidden;
-            /* Luxury background animation */
             animation: gradientShift 15s ease infinite alternate;
             background-size: 200% 200%;
         }
-
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
-
-        /* Your original hero styles remain */
         .hero::before {
             content: '';
             position: absolute;
@@ -95,23 +82,19 @@
             background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
             opacity: 0.5;
         }
-
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
-
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             color: var(--soft-black);
             animation: fadeInUp 1s ease;
-            /* Luxury enhancement */
             text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
-
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
@@ -119,13 +102,10 @@
             animation: fadeInUp 1s ease 0.2s forwards;
             opacity: 0;
         }
-
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Enhanced Aura Elements */
         .aura-element {
             position: absolute;
             width: 300px;
@@ -135,26 +115,20 @@
             filter: blur(30px);
             animation: floatAura 15s infinite ease-in-out;
             z-index: 1;
-            /* Luxury enhancement */
             mix-blend-mode: overlay;
         }
-
         @keyframes floatAura {
             0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
             25% { transform: translate(50px, -30px) scale(1.1); opacity: 0.4; }
             50% { transform: translate(0, 20px) scale(0.9); opacity: 0.2; }
             75% { transform: translate(-50px, -10px) scale(1.05); opacity: 0.35; }
         }
-
-        /* Enhanced Brand Story Section */
         .brand-story {
             padding: 100px 20px;
             background: linear-gradient(to bottom, var(--sand-gold), var(--rose-ivory));
             position: relative;
-            /* Luxury enhancement */
             overflow: hidden;
         }
-
         .brand-story::before {
             content: '';
             position: absolute;
@@ -167,12 +141,10 @@
             z-index: 0;
             animation: rotateGradient 30s linear infinite;
         }
-
         @keyframes rotateGradient {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         .story-container {
             max-width: 800px;
             margin: 0 auto;
@@ -185,54 +157,38 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
             position: relative;
             z-index: 1;
-            /* Luxury enhancement */
             transition: var(--transition-all);
         }
-
         .story-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
         }
-
-        /* Rest of your original CSS remains exactly as you wrote it */
         /* ... */
-
-        /* Enhanced Responsive Breakpoints */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.8rem;
             }
-
             .story-container {
                 padding: 40px 20px;
             }
-
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
-            /* Luxury mobile enhancement */
             .hero::before {
                 opacity: 0.3;
             }
         }
-
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 2.2rem;
             }
-
             .hero p {
                 font-size: 1.1rem;
             }
-            
-            /* Luxury mobile enhancement */
             .story-container {
                 padding: 30px 15px;
             }
         }
-
-        /* New Luxury Loading Animation */
         .luxury-loader {
             position: fixed;
             top: 0;
@@ -247,12 +203,10 @@
             opacity: 1;
             transition: opacity 0.8s ease-out;
         }
-
         .luxury-loader.fade-out {
             opacity: 0;
             pointer-events: none;
         }
-
         .luxury-loader::after {
             content: '';
             width: 60px;
@@ -262,7 +216,6 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -290,7 +243,6 @@
 
     <!-- Enhanced JavaScript with luxury effects -->
     <script>
-        // Your original script remains intact
         document.addEventListener('DOMContentLoaded', function() {
             const elements = document.querySelectorAll('.mission, .founder, .testimonials, .cta');
 
@@ -310,14 +262,13 @@
                 observer.observe(el);
             });
 
-            // New luxury loader removal
+            // FAST luxury loader removal (0.4s instead of 1.5s)
             const loader = document.querySelector('.luxury-loader');
             setTimeout(() => {
                 loader.classList.add('fade-out');
-            }, 1500);
+            }, 400);
         });
 
-        // New luxury aura enhancement
         function enhanceAura() {
             const auraElements = document.querySelectorAll('.aura-element');
             auraElements.forEach(el => {
@@ -326,12 +277,11 @@
                 el.style.opacity = '0.7';
             });
         }
-        
-        // Run after DOM is loaded
+
         window.addEventListener('load', enhanceAura);
     </script>
 
-    <!-- Your original flightjet.js - now with proper loading -->
+    <!-- Fixed flightjet.js linkage for GitHub Pages -->
     <script src="flightjet.js" defer></script>
 </body>
 </html>
